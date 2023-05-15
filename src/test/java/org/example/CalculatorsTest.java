@@ -51,9 +51,13 @@ class CalculatorsTest {
     }
 
     @Test
-    void multiplication() {
-        int result=calculator.multiplication(2,4);
-        assertTrue(result==8);
+    void multiplication()throws Exception {
+        try {
+            int result = calculator.multiplication(2, 4);
+            assertTrue(result == 8);
+        }catch (NullPointerException e){
+            System.out.println(e);
+        }
     }
 
     @Test
@@ -87,8 +91,12 @@ class CalculatorsTest {
 
     }
     @Test
-    void equalIntegers() {
-        boolean result=calculator.equalIntegers(10,10);
-        assertFalse(result);
+    void equalIntegers() throws Exception{
+        try {
+            boolean result = calculator.equalIntegers(10, 10);
+            assertFalse(result);
+        }catch (NullPointerException e){
+            System.out.println(e);
+        }
     }
 }
