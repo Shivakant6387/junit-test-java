@@ -74,6 +74,17 @@ class CalculatorsTest {
         }
     }
     @Test
+    void divison_ArithmeticException()throws Exception  {
+      Calculators calculators=new Calculators();
+      try {
+          int result=calculators.divison(12,0);
+      }
+    catch (ArithmeticException e){
+          e.printStackTrace();
+    }
+
+    }
+    @Test
     void equalIntegers() {
     }
 }
