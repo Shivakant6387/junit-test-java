@@ -23,12 +23,25 @@ class CalculatorsTest {
         assertEquals(46,sum);
 
     }
+    @Test
+    void sum_not_equals() {
+        Calculators calculators=new Calculators();
+        int sum=calculators.sum(12,34);
+        assertNotEquals(89,sum);
+
+    }
 
     @Test
     void subtraction() {
         Calculators calculators=new Calculators();
         int sub=calculators.subtraction(12,4);
         assertTrue(sub==8);
+    }
+    @Test
+    void subtraction_false() {
+        Calculators calculators=new Calculators();
+        int sub=calculators.subtraction(12,4);
+        assertFalse(sub==3);
     }
 
     @Test
