@@ -52,6 +52,8 @@ class CalculatorsTest {
 
     @Test
     void multiplication() {
+        int result=calculator.multiplication(2,4);
+        assertTrue(result==8);
     }
 
     @Test
