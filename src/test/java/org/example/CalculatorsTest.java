@@ -26,6 +26,9 @@ class CalculatorsTest {
 
     @Test
     void subtraction() {
+        Calculators calculators=new Calculators();
+        int sub=calculators.subtraction(12,4);
+        assertTrue(sub==8);
     }
 
     @Test
