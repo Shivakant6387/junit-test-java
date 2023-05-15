@@ -18,6 +18,10 @@ class CalculatorsTest {
     }
     @Test
     void sum() {
+        Calculators calculators=new Calculators();
+        int sum=calculators.sum(12,34);
+        assertEquals(46,sum);
+
     }
 
     @Test
