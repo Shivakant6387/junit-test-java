@@ -1,8 +1,6 @@
 package org.example;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,6 +13,14 @@ class CalculatorsTest {
     @AfterAll
     static void test_SuccessFully_End(){
         System.out.println("test ended");
+    }
+    @BeforeEach
+    void test_before_each(){
+        System.out.println("Hey test is complete start");
+    }
+    @AfterEach
+    void test_after_each(){
+        System.out.println("Test is complete end.Bye");
     }
     @Test
     void sum() {
