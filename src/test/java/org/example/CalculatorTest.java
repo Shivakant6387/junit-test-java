@@ -15,6 +15,7 @@ class CalculatorTest {
     //then
     assertEquals(6,sum);
     }
+    @Test
     void should_return_not_equals_when_evaluate(){
     //given
     Calculator calculator=new Calculator();
