@@ -86,5 +86,7 @@ class CalculatorsTest {
     }
     @Test
     void equalIntegers() {
+        boolean result=calculator.equalIntegers(10,10);
+        assertFalse(result);
     }
 }
