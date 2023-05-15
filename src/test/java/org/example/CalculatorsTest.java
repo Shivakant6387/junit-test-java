@@ -55,9 +55,24 @@ class CalculatorsTest {
     }
 
     @Test
-    void divison() {
+    void divison()throws Exception  {
+        Calculators calculators=new Calculators();
+    try {
+        int result=calculators.divison(10,2);
+        assertEquals(5,result);
+    }catch (Exception e){
+        e.printStackTrace(System.err);
     }
-
+    }
+    @Test
+    void divison_nullPointerException()throws Exception  {
+        try {
+            int result=calculator.divison(10,2);
+            assertEquals(5,result);
+        }catch (Exception e){
+            e.printStackTrace(System.err);
+        }
+    }
     @Test
     void equalIntegers() {
     }
