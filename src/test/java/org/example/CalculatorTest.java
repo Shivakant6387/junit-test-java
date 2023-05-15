@@ -15,4 +15,12 @@ class CalculatorTest {
     //then
     assertEquals(6,sum);
     }
+    void should_return_not_equals_when_evaluate(){
+    //given
+    Calculator calculator=new Calculator();
+    // when
+      int sum=calculator.evaluate("2+3+4");
+    //then
+    assertNotEquals(10,sum);
+    }
 }
