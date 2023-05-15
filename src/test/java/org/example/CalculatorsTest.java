@@ -12,6 +12,10 @@ class CalculatorsTest {
     static void test_SuccessFully_Start(){
         System.out.println("Test Started");
     }
+    @AfterAll
+    static void test_SuccessFully_End(){
+        System.out.println("test ended");
+    }
     @Test
     void sum() {
     }
