@@ -53,6 +53,23 @@ class BMICalculatorTest {
     }
 
     @Test
-    void isNormalWeight() {
+    void should_assert_true_isNormalWeight() {
+        //given
+        BMICalculator bmiCalculator=new BMICalculator();
+        double bmi=23.0;
+        //when
+        boolean result=bmiCalculator.isNormalWeight(bmi);
+        //then
+        assertTrue(result);
+    }
+    @Test
+    void should_assert_false_is_not_NormalWeight() {
+        //given
+        BMICalculator bmiCalculator=new BMICalculator();
+        double bmi=235.0;
+        //when
+        boolean result=bmiCalculator.isNormalWeight(bmi);
+        //then
+        assertFalse(result);
     }
 }
