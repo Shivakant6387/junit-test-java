@@ -32,7 +32,24 @@ class BMICalculatorTest {
     }
 
     @Test
-    void isUnderweight() {
+    void should_assert_true_when_isUnderweight() {
+        //given
+        BMICalculator bmiCalculator=new BMICalculator();
+        double bmi=17.5;
+        //when
+        boolean result=bmiCalculator.isUnderweight(bmi);
+        //then
+        assertTrue(result);
+    }
+    @Test
+    void should_assert_false_when_is_not_Underweight() {
+        //given
+        BMICalculator bmiCalculator=new BMICalculator();
+        double bmi=19.5;
+        //when
+        boolean result=bmiCalculator.isUnderweight(bmi);
+        //then
+        assertFalse(result);
     }
 
     @Test
