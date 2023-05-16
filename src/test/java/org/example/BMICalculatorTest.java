@@ -18,6 +18,18 @@ class BMICalculatorTest {
        //then
         assertEquals(expectedBMI,result,0.01);
     }
+    @Test
+    void should_assert_not_equals_when_calculateBMI() {
+        //given
+        BMICalculator bmiCalculator=new BMICalculator();
+        double height=1.75;
+        double weight=70;
+        double expectedBMI=26.86;
+        //when
+        double result=bmiCalculator.calculateBMI(height,weight);
+        //then
+        assertNotEquals(expectedBMI,result,0.01);
+    }
 
     @Test
     void isUnderweight() {
