@@ -2,6 +2,8 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Executable;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BMICalculatorTest {
@@ -71,5 +73,14 @@ class BMICalculatorTest {
         boolean result=bmiCalculator.isNormalWeight(bmi);
         //then
         assertFalse(result);
+    }
+    @Test
+    void should_assert_throws_when_CalculatesBMI(){
+        BMICalculator calculator = new BMICalculator();
+        double height = 1.75; // in meters
+        double weight = 0.0; // invalid weight
+        assertThrows(IllegalArgumentException.class, () -> {
+            calculator.calculatesBMI(height, weight);
+        });
     }
 }
