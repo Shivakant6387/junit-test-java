@@ -2,6 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -52,6 +53,17 @@ class BMICalculatorTest {
     @ParameterizedTest(name ="bmi[0]")
     @ValueSource(doubles = {1.76,16.8,17.8,12.56})
     void should_assert_return_true_when_isUnderweight(double coreBmi) {
+        //given
+        BMICalculator bmiCalculator=new BMICalculator();
+        double bmi=coreBmi;
+        //when
+        boolean result=bmiCalculator.isUnderweight(bmi);
+        //then
+        assertTrue(result);
+    }
+    @ParameterizedTest(name ="bmi[0]")
+    @CsvFileSource(resources = "/data", numLinesToSkip = 1)
+    void should_assert_return_true_files_data_when_isUnderweight(double coreBmi) {
         //given
         BMICalculator bmiCalculator=new BMICalculator();
         double bmi=coreBmi;
