@@ -1,6 +1,8 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.lang.reflect.Executable;
 
@@ -41,6 +43,14 @@ class BMICalculatorTest {
         //when
         boolean result=bmiCalculator.isUnderweight(bmi);
         //then
+        assertTrue(result);
+    }
+    @ParameterizedTest
+    @ValueSource(doubles = {1.6,1.8,1.7,1.9,1.3,1.4})
+    void should_assert_return_true_multiply_value_when_isUnderweight(Double coreBmi) {
+        BMICalculator bmiCalculator=new BMICalculator();
+       double bmi=coreBmi;
+        boolean result=bmiCalculator.isUnderweight(bmi);
         assertTrue(result);
     }
     @Test
