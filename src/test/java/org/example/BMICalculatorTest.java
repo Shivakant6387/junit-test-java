@@ -2,6 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.lang.reflect.Executable;
@@ -22,6 +23,19 @@ class BMICalculatorTest {
        //then
         assertEquals(expectedBMI,result,0.01);
     }
+    @ParameterizedTest(name = "height[0],weight[1]")
+    @CsvSource(value = {"1.75,70"})
+    void should_assert_return_equals_when_calculatesBMI(double coreheight,double coreweight) {
+        //given
+        BMICalculator bmiCalculator=new BMICalculator();
+        double height=coreheight;
+        double weight=coreweight;
+        double expectedBMI=22.86;
+        //when
+        double result=bmiCalculator.calculateBMI(height,weight);
+        //then
+        assertEquals(expectedBMI,result,0.01);
+    }
     @Test
     void should_assert_not_equals_when_calculateBMI() {
         //given
@@ -35,6 +49,17 @@ class BMICalculatorTest {
         assertNotEquals(expectedBMI,result,0.01);
     }
 
+    @ParameterizedTest(name ="bmi[0]")
+    @ValueSource(doubles = {1.76,16.8,17.8,12.56})
+    void should_assert_return_true_when_isUnderweight(double coreBmi) {
+        //given
+        BMICalculator bmiCalculator=new BMICalculator();
+        double bmi=coreBmi;
+        //when
+        boolean result=bmiCalculator.isUnderweight(bmi);
+        //then
+        assertTrue(result);
+    }
     @Test
     void should_assert_true_when_isUnderweight() {
         //given
